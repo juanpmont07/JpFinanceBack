@@ -57,7 +57,7 @@ public class PersonController {
 
     @GetMapping(value = "getPerson", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<Person> getPerson(HttpServletRequest request,
-                                            @RequestBody String ID) {
+                                            @RequestParam("ID") String ID) {
 
         try {
             Person person = personService.getPerson(ID);

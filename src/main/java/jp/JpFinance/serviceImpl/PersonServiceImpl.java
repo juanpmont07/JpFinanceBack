@@ -34,7 +34,8 @@ public class PersonServiceImpl implements PersonService {
 
     @Override
     public Person getPerson(String ID) {
-        return personDao.findById(Long.parseLong(ID)).get();
+        List<Person> listPerson = (List<Person>) personDao.findAll();
+        return listPerson.stream().filter(p-> p.getId().equalsIgnoreCase(ID)).findFirst().get();
     }
 
     @Override
