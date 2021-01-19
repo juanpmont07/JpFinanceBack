@@ -1,10 +1,7 @@
 package jp.JpFinance.model;
 
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 import lombok.Data;
 
@@ -12,13 +9,17 @@ import lombok.Data;
 @Entity
 @Table(name = "person")
 public class Person {
- 
-	@Id
-	@Column
-	private String id;
-	private String username;
-	private String name;
-	private String lastname;
-	private String email;
-	private String password;
+
+    @Id
+    @Column
+    private String id;
+
+    private String username;
+    private String name;
+    private String lastname;
+    private String email;
+    private String password;
+
+//	@Column(name=  "nose")//cada que tenga una mayuscula de pone_
+//	private String noseHola;
 }
