@@ -1,7 +1,7 @@
 package jp.JpFinance.serviceImpl;
 
 import jp.JpFinance.daoImpl.PersonDaoImpl;
-import jp.JpFinance.model.Person;
+import jp.JpFinance.dbModel.Person;
 import jp.JpFinance.service.PersonService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -42,4 +42,10 @@ public class PersonServiceImpl implements PersonService {
     public List<Person> getAll() {
         return (List<Person>) personDao.findAll();
     }
+
+	@Override
+	public Person login(String email, String password) {
+		
+		return personDao.validateEmail(email, password);
+	}
 }

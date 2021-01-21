@@ -1,9 +1,8 @@
 package jp.JpFinance.service;
 
-import jp.JpFinance.model.Person;
-
 import java.util.List;
-import java.util.Optional;
+
+import jp.JpFinance.dbModel.Person;
 
 public interface PersonService {
     /**
@@ -18,4 +17,6 @@ public interface PersonService {
     public Person getPerson(String ID);
 
     public List<Person> getAll();
+    
+    public Person login(String email, String password);
 }

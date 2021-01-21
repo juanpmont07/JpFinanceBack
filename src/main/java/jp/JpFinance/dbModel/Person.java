@@ -1,7 +1,10 @@
-package jp.JpFinance.model;
+package jp.JpFinance.dbModel;
 
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
 import lombok.Data;
 
@@ -13,13 +16,12 @@ public class Person {
     @Id
     @Column
     private String id;
-
+    
+    
     private String username;
     private String name;
     private String lastname;
     private String email;
     private String password;
 
-//	@Column(name=  "nose")//cada que tenga una mayuscula de pone_
-//	private String noseHola;
 }
