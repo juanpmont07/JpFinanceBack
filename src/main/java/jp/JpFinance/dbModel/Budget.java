@@ -1,7 +1,5 @@
 package jp.JpFinance.dbModel;
 
-import java.util.Date;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -19,25 +17,20 @@ import lombok.Data;
 
 @Data
 @Entity
-@Table(name = "incomexpenses")
-public class IncomExpenses {
+@Table(name = "budget")
+public class Budget {
 
-	
 	@Id
 	@Column
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private long id;
 	
-	
-	@JoinColumn(name = "idbudget")
+	@JoinColumn(name = "iduser")
 	@ManyToOne(optional = false,fetch = FetchType.EAGER)
 	@OnDelete(action = OnDeleteAction.CASCADE)	
-	Budget budget;
+	Person person;
 	
-	private String description;
-	private String type;
-	private String category;
-	private Date datein;
-	private int isexpense;
+	private String name;
+	private float value;
 	
 }

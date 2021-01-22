@@ -1,6 +1,10 @@
 package jp.JpFinance.daoImpl;
 
-public class IncomExpensesDaoImpl {
+import org.springframework.data.repository.CrudRepository;
 
+import jp.JpFinance.dbModel.IncomExpenses;
 
+public interface IncomExpensesDaoImpl extends CrudRepository<IncomExpenses, Long> {
+
+	
 }

@@ -13,6 +13,13 @@ create table person(
  password varchar(100)
 )
 
+create table budget(
+ id int primary key identity(1,1),
+ name varchar(50),
+ value float,
+ idUser varchar(20) foreign key (idUser) references person(id)
+ )
+
 create table incomexpenses(
  id int primary key identity(1,1),
  description varchar(100),
@@ -20,6 +27,6 @@ create table incomexpenses(
  category varchar(20),
  datein date,
  isexpense bit,
- idUser varchar(20) foreign key (idUser) references person(id)
+ idBudget varchar(20) foreign key (idBudget) references budget(id)
 )
 

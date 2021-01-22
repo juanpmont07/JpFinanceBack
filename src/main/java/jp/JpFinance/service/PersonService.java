@@ -5,9 +5,7 @@ import java.util.List;
 import jp.JpFinance.dbModel.Person;
 
 public interface PersonService {
-    /**
-     * Metodo encardo de guardar.
-     */
+    
     public void save(Person person);
 
     public void update(Person person);
