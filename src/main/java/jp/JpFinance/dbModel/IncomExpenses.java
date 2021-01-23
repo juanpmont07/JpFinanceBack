@@ -38,6 +38,7 @@ public class IncomExpenses {
 	private String type;
 	private String category;
 	private Date datein;
+	private float value;
 	private int isexpense;
 	
 }

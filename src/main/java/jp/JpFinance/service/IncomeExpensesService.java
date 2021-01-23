@@ -2,6 +2,7 @@ package jp.JpFinance.service;
 
 import java.util.List;
 
+import jp.JpFinance.dbModel.Budget;
 import jp.JpFinance.dbModel.IncomExpenses;
 
 public interface IncomeExpensesService {
@@ -15,5 +16,6 @@ public interface IncomeExpensesService {
 
     public List<IncomExpenses> getAll();
 
+	public Budget calculateValue(Budget budget);
 	
 }

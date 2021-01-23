@@ -4,6 +4,7 @@ create database jpfinance
 use jpfinance
 
 
+
 create table person(
  id varchar(20) primary key,
  username varchar(50),
@@ -27,6 +28,7 @@ create table incomexpenses(
  category varchar(20),
  datein date,
  isexpense bit,
- idBudget varchar(20) foreign key (idBudget) references budget(id)
+ value float,
+ idBudget int foreign key (idBudget) references budget(id)
 )
 

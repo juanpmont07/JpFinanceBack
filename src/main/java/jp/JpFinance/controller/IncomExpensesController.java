@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import jp.JpFinance.dbModel.Budget;
 import jp.JpFinance.dbModel.IncomExpenses;
 import jp.JpFinance.service.IncomeExpensesService;
 
@@ -67,6 +68,17 @@ public class IncomExpensesController {
 		try {
 			List<IncomExpenses> listPerson = incomExpenses.getAll();
 			return new ResponseEntity<>(listPerson, HttpStatus.OK);
+		} catch (Exception e) {
+			return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+		}
+
+	}
+	
+	@PostMapping(value = "calculateValue", produces = MediaType.APPLICATION_JSON_VALUE)
+	public ResponseEntity<Budget> calculateValue(HttpServletRequest request, @RequestBody Budget budget) {
+		try {
+			Budget budg = incomExpenses.calculateValue(budget);
+			return new ResponseEntity<>(budg, HttpStatus.OK);
 		} catch (Exception e) {
 			return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
 		}
