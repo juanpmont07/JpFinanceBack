@@ -64,4 +64,9 @@ public class IncomeExpensesServiceImpl implements IncomeExpensesService {
 		return budget;
 	}
 
+	@Override
+	public void saveAll(List<IncomExpenses> incom) {
+		incomeExpensesDao.saveAll(incom);
+	}
+
 }

@@ -9,6 +9,8 @@ public interface IncomeExpensesService {
 
 
     public void save(IncomExpenses person);
+    
+    public void saveAll(List<IncomExpenses> person);
 
     public void update(IncomExpenses person);
 

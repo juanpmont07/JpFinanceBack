@@ -39,6 +39,17 @@ public class IncomExpensesController {
 		}
 
 	}
+	
+	@PostMapping(value = "saveAll", produces = MediaType.APPLICATION_JSON_VALUE)
+	public ResponseEntity<HttpStatus> saveAll(HttpServletRequest request, @RequestBody List<IncomExpenses> inEx) {
+		try {
+			incomExpenses.saveAll(inEx);
+			return new ResponseEntity<>(HttpStatus.CREATED);
+		} catch (Exception e) {
+			return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+		}
+
+	}
 
 	@PostMapping(value = "update", produces = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<HttpStatus> update(HttpServletRequest request, @RequestBody IncomExpenses inEx) {
