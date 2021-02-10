@@ -14,11 +14,12 @@ create table person(
  password varchar(100)
 )
 
+
 create table budget(
  id int primary key identity(1,1),
  name varchar(50),
  value float,
- idUser varchar(20) foreign key (idUser) references person(id)
+ idcreator varchar(20)
  )
 
 create table incomexpenses(
@@ -32,3 +33,19 @@ create table incomexpenses(
  idBudget int foreign key (idBudget) references budget(id)
 )
 
+create table personbudget(
+   idUser varchar(20) foreign key (idUser) references person(id),
+   idBudget int foreign key (idBudget) references budget(id),
+   primary key(idUser, idBudget)
+)
+
+create table saving(
+    id int primary key identity(1,1),
+	goalvalue float,
+	qoutavalue float,
+	description varchar(200),
+	frequency int,
+	dateinit date,
+	dateend date,
+
+)
