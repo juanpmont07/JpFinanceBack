@@ -5,9 +5,9 @@ import lombok.Data;
 @Data
 public class MonthlyFee {
 
-	private float value;
-	private float totalValue;
-	private float interest;
+	private double value;
+	private double totalValue;
+	private double interest;
 	private String description;
 	
 	

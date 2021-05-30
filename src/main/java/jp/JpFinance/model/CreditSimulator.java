@@ -7,9 +7,9 @@ import lombok.Data;
 @Data
 public class CreditSimulator {
 
-	private float value;
-	private float interest;
-	private float valueTotal;
+	private double value;
+	private double interest;
+	private double valueTotal;
 	private int numberFee;
 	private String description;
 	private List<MonthlyFee> fee;

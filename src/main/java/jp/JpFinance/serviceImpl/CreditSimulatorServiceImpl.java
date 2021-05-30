@@ -18,13 +18,13 @@ public class CreditSimulatorServiceImpl implements CreditSimulatorService {
 	@Override
 	public CreditSimulator calculateQuotas(CreditSimulator creditSim) {
 		
-		float interest = (float) (creditSim.getInterest() * 0.01);
+		double interest = (double) (creditSim.getInterest() * 0.01);
 		
-		float valueFee = creditSim.getValue() / creditSim.getNumberFee();
+		double valueFee = creditSim.getValue() / creditSim.getNumberFee();
 		
-		float capitalValue = creditSim.getValue();
+		double capitalValue = creditSim.getValue();
 		
-		float valueTotal = 0;
+		double valueTotal = 0;
 		
 		List<MonthlyFee> monthlyFee = new ArrayList<>();
 				
